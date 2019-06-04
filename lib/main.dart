@@ -17,16 +17,32 @@ void main() {
 }
 
 class DicePage extends StatelessWidget {
+  var leftDiceNumber = 1;
+  var rightDiceNumber = 2;
+
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: <Widget>[
-        Expanded(
-          child: Image(
-            image: AssetImage('images/dice1.png'),
+    return Center(
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: FlatButton(
+              onPressed: () {
+                print('Left button got pressed.');
+              },
+              child: Image.asset('images/dice$leftDiceNumber.png'),
+            ),
           ),
-        ),
-      ],
+          Expanded(
+            child: FlatButton(
+              onPressed: () {
+                print('Right button got pressed.');
+              },
+              child: Image.asset('images/dice$rightDiceNumber.png'),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
